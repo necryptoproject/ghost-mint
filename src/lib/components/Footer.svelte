@@ -14,7 +14,7 @@
 </script>
 
 <div class="bg-[#080026] text-[#FAF879]">
-	<div class="container flex justify-between items-center py-2">
+	<div class="container flex justify-between items-center py-2 gap-4 max-lg:flex-col gap-y-8">
 		<a
 			href="#"
 			class="flex items-center justify-center space-x-2 opacity-[.32] hover:opacity-100 transition-all ease-linear duration-300"

@@ -19,7 +19,7 @@
 		class="w-full"
 	>
 		{#each nfts as nft}
-			<swiper-slide class="w-[260px]">
+			<swiper-slide class="w-[260px] border-4 border-[#FFA800] rounded-3xl overflow-hidden">
 				<img src={nft} />
 			</swiper-slide>
 		{/each}

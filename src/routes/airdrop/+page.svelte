@@ -23,6 +23,44 @@
 		dateStart: dayjs().subtract(1, 'month'),
 		reward: 0
 	};
+	const rules = [
+		{
+			title: 'Mint Volume',
+			items: [
+				{ volume: 100, reward: 20 },
+				{ volume: 1000, reward: 40 }
+			]
+		},
+		{
+			title: 'Bridge Volume',
+			items: [
+				{ volume: 100, reward: 20 },
+				{ volume: 1000, reward: 40 }
+			]
+		},
+		{
+			title: 'Refuel Volume',
+			items: [
+				{ volume: 100, reward: 20 },
+				{ volume: 1000, reward: 40 }
+			]
+		},
+		{
+			title: 'Referrals',
+			items: [
+				{ volume: 100, reward: 20 },
+				{ volume: 1000, reward: 40 }
+			]
+		}
+	];
+
+	const leaders = [
+		{ username: 'XXX', points: 980 },
+		{ username: 'Oleg', points: 350 },
+		{ username: 'Petr', points: 45 },
+		{ username: 'Chelovek', points: 35 },
+		{ username: 'Ivan', points: 20 }
+	];
 </script>
 
 <div class="container grid lg:grid-cols-2 gap-[18px] pt-[18px] pb-24">
@@ -40,10 +78,7 @@
 			</Card>
 		</div>
 		<div class="">
-			<Card>
-				<svelte:fragment slot="head">
-					<p>My XPoints</p>
-				</svelte:fragment>
+			<Card head="My XPoints">
 				<div class="space-y-1 font-bold">
 					<p class="text-2xl">{balance} <span class="text-yellow">XPoints</span></p>
 				</div>
@@ -108,7 +143,7 @@
 						</p>
 					</div>
 					<div class="h-[26px] border-b border-white/35 border-dashed"></div>
-					<div class="flex items-center justify-end space-x-1">
+					<div class="flex items-center justify-end gap-1">
 						<p class="font-bold">+{multiplicators.reward}</p>
 						<Gift class="w-5 aspect-square" />
 					</div>
@@ -118,10 +153,39 @@
 	</div>
 	<div class="space-y-[18px]">
 		<div class="">
-			<Card></Card>
+			<Card head="Rules">
+				<p class="text-2xl font-bold">
+					Use <span class="text-yellow">GhostMint</span> on Blast
+				</p>
+			</Card>
+			{#each rules as { title, items }}
+				<Card head={title}>
+					{#each items as { volume, reward }}
+						<div class="p-3 bg-white/5 flex items-center justify-between rounded-xl">
+							<p class="font-bold text-white/65">${volume} +</p>
+							<div class="flex items-center justify-end gap-1">
+								<p class="font-bold text-white">+{reward}</p>
+								<Gift class="w-5 aspect-square" />
+							</div>
+						</div>
+					{/each}
+				</Card>
+			{/each}
 		</div>
 		<div class="">
-			<Card></Card>
+			<Card head="Leaderboard" />
+			<Card class="!p-0">
+				{#each leaders as { username, points }, i}
+					<div
+						class="flex items-center justify-between w-full py-3 px-8 {i % 2 === 0
+							? 'class:bg-white/5'
+							: ''}"
+					>
+						<p class="text-sm text-white/65">{username}</p>
+						<p class="text-sm font-bold">{points} XPoints</p>
+					</div>
+				{/each}
+			</Card>
 		</div>
 	</div>
 </div>
