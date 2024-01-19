@@ -1,0 +1,24 @@
+{
+	"svelte.enable-ts-plugin": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"svelte.plugin.svelte.compilerWarnings": {
+		"a11y-click-events-have-key-events": "ignore",
+		"a11y-mouse-events-have-key-events": "ignore",
+		"a11y-media-has-caption": "ignore",
+		"security-anchor-rel-noreferrer": "ignore"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"css.customData": ["./tailwind.json"],
+	"files.associations": {
+		"*.css": "postcss"
+	}
+}
