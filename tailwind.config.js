@@ -28,6 +28,9 @@ export default {
 			width: {
 				screen: '100dvw'
 			},
+			spacing: {
+				100: '25rem'
+			},
 			boxShadow: {
 				btn: '0px 0px 8px 0px #FBFF2E'
 			}

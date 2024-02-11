@@ -19,7 +19,10 @@
 	use:clickOutside={() => (expanded = false)}
 	class="container py-3.5 flex items-center justify-between relative z-40"
 >
-	<div class="w-[163px] h-[62px] bg-yellow relative z-10"></div>
+	<!-- <div class="w-[163px] h-[62px] bg-yellow relative z-10"></div> -->
+	<a href="/">
+		<img src="/img/logo.webp" alt="" class="lg:h-[70px] h-12" />
+	</a>
 	<div class="flex items-center justify-center space-x-16 max-lg:hidden">
 		{#each items as { text, href, status }}
 			<svelte:element
@@ -40,7 +43,7 @@
 	</div>
 	<button
 		type="button"
-		class="uppercase border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark max-lg:hidden"
+		class="uppercase border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark max-lg:hidden hover:-translate-y-2 transition-all ease-linear duration-300"
 		>connect wallet</button
 	>
 	<button on:click={() => (expanded = !expanded)} class="lg:hidden relative z-10">
@@ -72,7 +75,7 @@
 		</div>
 		<button
 			type="button"
-			class="uppercase border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark mx-auto mt-6 w-full"
+			class="uppercase border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark mx-auto mt-6 w-full hover:-mt-2 transition-all ease-linear duration-300"
 			>connect wallet</button
 		>
 	</div>
