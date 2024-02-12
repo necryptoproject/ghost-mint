@@ -77,7 +77,7 @@
 				</div>
 			</Card>
 		</div>
-		<div class="pointer-events-none blur-sm">
+		<div class="pointer-events-none select-none blur-sm">
 			<Card head="My XPoints">
 				<div class="space-y-1 font-bold">
 					<p class="text-2xl">{balance} <span class="text-yellow">XPoints</span></p>
@@ -98,7 +98,7 @@
 				</div>
 			</Card>
 		</div>
-		<div class="pointer-events-none blur-sm">
+		<div class="pointer-events-none select-none blur-sm">
 			<Card>
 				<svelte:fragment slot="head">
 					<p>Weekly Reward</p>
@@ -152,7 +152,7 @@
 		</div>
 	</div>
 	<div class="space-y-[18px]">
-		<div class="pointer-events-none blur-sm">
+		<div class="pointer-events-none select-none blur-sm">
 			<Card head="Rules">
 				<p class="text-2xl font-bold">
 					Use <span class="text-yellow">GhostMint</span> on Blast
@@ -172,7 +172,7 @@
 				</Card>
 			{/each}
 		</div>
-		<div class="pointer-events-none blur-sm">
+		<div class="pointer-events-none select-none blur-sm">
 			<Card head="Leaderboard" />
 			<Card class="!p-0">
 				{#each leaders as { username, points }, i}
