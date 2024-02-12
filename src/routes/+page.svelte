@@ -12,7 +12,7 @@
 <div bind:clientWidth={containerWidth} class="container"></div>
 
 <div bind:clientWidth={sectionWidth} class="w-screen pb-2">
-	<div class="container max-lg:pt-24 relative -mt-[98px]">
+	<div class="container max-lg:pt-24 relative -mt-[98px] pb-20">
 		<img
 			src="/img/eyes.gif"
 			alt=""
