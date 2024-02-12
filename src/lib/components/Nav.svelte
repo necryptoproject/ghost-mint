@@ -20,7 +20,7 @@
 	class="container py-3.5 flex items-center justify-between relative z-40"
 >
 	<!-- <div class="w-[163px] h-[62px] bg-yellow relative z-10"></div> -->
-	<a href="/">
+	<a href="/" class="relative z-10">
 		<img src="/img/logo.webp" alt="" class="lg:h-[70px] h-12" />
 	</a>
 	<div class="flex items-center justify-center space-x-16 max-lg:hidden">
