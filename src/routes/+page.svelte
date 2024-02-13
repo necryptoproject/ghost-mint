@@ -39,11 +39,11 @@
 			class="absolute bottom-12 left-0 w-12 aspect-square rotate-[65deg]"
 		/>
 		<img
-			src="/img/pacman.gif"
+			src="/img/pacman_lg.gif"
 			alt=""
-			class="lg:h-[700px] h-[400px] max-w-[800px] lg:object-contain lg:object-bottom mx-auto object-cover object-left max-lg:-mx-4 max-lg:w-[calc(100%+2rem)] max-lg:max-w-none"
+			class="lg:h-[700px] h-[400px] max-lg:max-w-[800px] lg:object-contain lg:object-bottom mx-auto object-cover object-left max-lg:-mx-4 max-lg:w-[calc(100%+2rem)]"
 		/>
-		<div class="flex items-center justify-center max-lg:flex-col gap-6 relative z-10 -mt-10">
+		<div class="flex items-center justify-center max-lg:flex-col gap-6 relative z-10">
 			<img
 				src="/img/cherry.webp"
 				alt=""
