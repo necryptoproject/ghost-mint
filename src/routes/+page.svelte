@@ -1,13 +1,10 @@
 <script lang="ts">
 	import Mint from '$lib/components/Mint.svelte';
-	import { register } from 'swiper/element/bundle';
 
 	const nfts = new Array(14).fill('/img/nft-sample.webp');
 
 	let sectionWidth = 0;
 	let containerWidth = 0;
-
-	register();
 </script>
 
 <div bind:clientWidth={containerWidth} class="container"></div>
