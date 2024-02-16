@@ -37,6 +37,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-cloudflare": "^4.1.0",
+		"@sveltejs/adapter-static": "^3.0.1",
 		"@web3modal/ethers": "^4.0.5",
 		"dayjs": "^1.11.10",
 		"ethers": "^6.11.1"
