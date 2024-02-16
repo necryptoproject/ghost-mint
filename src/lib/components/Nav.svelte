@@ -42,7 +42,7 @@
 			</svelte:element>
 		{/each}
 	</div>
-	<ConnectWallet />
+	<ConnectWallet class="max-lg:hidden" />
 	<button on:click={() => (expanded = !expanded)} class="lg:hidden relative z-10">
 		<Burger class="w-8 aspect-square text-white" />
 	</button>
