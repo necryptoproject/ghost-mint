@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Mint from '$lib/components/Mint.svelte';
 	import { register } from 'swiper/element/bundle';
 
 	const nfts = new Array(14).fill('/img/nft-sample.webp');
@@ -54,11 +55,7 @@
 				alt=""
 				class="absolute top-full right-12 w-12 aspect-square"
 			/>
-			<button
-				type="button"
-				class="py-4 px-6 max-w-64 w-full bg-yellow shadow-btn border-[3px] border-dark font-bold text-dark uppercase leading-[100%] rounded-lg block text-[28px] hover:-translate-y-2 transition-all ease-linear duration-300"
-				>Mint</button
-			>
+			<Mint />
 			<button
 				type="button"
 				class="py-4 px-6 max-w-64 w-full bg-yellow shadow-btn border-[3px] border-dark font-bold text-dark uppercase leading-[100%] rounded-lg block text-[28px] hover:-translate-y-2 transition-all ease-linear duration-300"

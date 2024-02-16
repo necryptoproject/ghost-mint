@@ -2,6 +2,7 @@
 	import { afterNavigate } from '$app/navigation';
 	import Burger from '$lib/assets/svg/burger.svg?component';
 	import { clickOutside } from '$lib/clickOutside';
+	import ConnectWallet from './ConnectWallet.svelte';
 
 	let expanded = false;
 
@@ -41,11 +42,7 @@
 			</svelte:element>
 		{/each}
 	</div>
-	<button
-		type="button"
-		class="uppercase border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark max-lg:hidden hover:-translate-y-2 transition-all ease-linear duration-300"
-		>connect wallet</button
-	>
+	<ConnectWallet />
 	<button on:click={() => (expanded = !expanded)} class="lg:hidden relative z-10">
 		<Burger class="w-8 aspect-square text-white" />
 	</button>
@@ -72,11 +69,7 @@
 					>
 				</svelte:element>
 			{/each}
+			<ConnectWallet />
 		</div>
-		<button
-			type="button"
-			class="uppercase border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark mx-auto mt-6 w-full hover:-mt-2 transition-all ease-linear duration-300"
-			>connect wallet</button
-		>
 	</div>
 </div>
