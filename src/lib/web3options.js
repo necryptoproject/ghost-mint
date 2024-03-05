@@ -2,11 +2,11 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers";
 
  const projectId = 'c3be550d6803eacd06c124ce7e10d7b1';
  const mainnet = {
-    chainId: 168587773,
+    chainId: 81457,
     name: 'Blast Sepolia',
     currency: 'ETH',
-    explorerUrl: 'https://testnet.blastscan.io',
-    rpcUrl: 'https://sepolia.blast.io'
+    explorerUrl: 'https://blastscan.io',
+    rpcUrl: 'https://rpc.blast.io'
 };
  const metadata = {
     name: 'My Website',
@@ -22,7 +22,7 @@ export const modal = createWeb3Modal({
     enableAnalytics: true // Optional - defaults to your Cloud configuration
 });
 
-export const USDTAddress = "0xB251F8c3D5BCF08CCb0bdfF346Cf304b8f1eC0a7"
+export const USDTAddress = "0xc0F14A9a8d3Bc913E660c473c1932FFBDda71b45"
 export const USDTAbi = [
     {
         "inputs": [],
@@ -60,6 +60,13 @@ export const USDTAbi = [
           }
         ],
         "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "claimYields",
+        "outputs": [],
+        "stateMutability": "payable",
         "type": "function"
       }
       
