@@ -29,7 +29,7 @@
 		<img
 			src="/img/orange.webp"
 			alt=""
-			class="w-16 aspect-square lg:top-1/2 top-2/3 lg:left-full max-lg:right-4 absolute"
+			class="w-16 aspect-square top-1/2 lg:left-full max-lg:right-4 absolute"
 		/>
 		<img
 			src="/img/strawberry.webp"
@@ -39,7 +39,7 @@
 		<img
 			src="/img/pacman_lg.gif"
 			alt=""
-			class="lg:h-[600px] h-[300px] max-lg:max-w-[800px] lg:object-contain lg:object-bottom mx-auto object-cover object-left max-lg:-mx-4 max-lg:w-[calc(100%+2rem)] relative"
+			class="lg:h-[600px] h-[150px] max-lg:max-w-[800px] lg:object-contain lg:object-bottom max-lg:mt-24 max-lg:mb-28 mx-auto object-cover object-left max-lg:-mx-4 max-lg:w-[calc(100%+2rem)] relative"
 		/>
 		<div class="flex items-center justify-center max-lg:flex-col gap-6 relative z-10 mt-8">
 			<img
@@ -50,7 +50,7 @@
 			<img
 				src="/img/strawberry.webp"
 				alt=""
-				class="absolute top-full right-12 w-12 aspect-square"
+				class="absolute lg:top-full top-[calc(100%+2rem)] right-12 w-12 aspect-square"
 			/>
 			<Mint />
 			<Claim />
