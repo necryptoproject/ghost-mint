@@ -39,7 +39,7 @@
 		<img
 			src="/img/pacman_lg.gif"
 			alt=""
-			class="lg:h-[600px] h-[400px] max-lg:max-w-[800px] lg:object-contain lg:object-bottom mx-auto object-cover object-left max-lg:-mx-4 max-lg:w-[calc(100%+2rem)]"
+			class="lg:h-[600px] h-[300px] max-lg:max-w-[800px] lg:object-contain lg:object-bottom mx-auto object-cover object-left max-lg:-mx-4 max-lg:w-[calc(100%+2rem)] relative"
 		/>
 		<div class="flex items-center justify-center max-lg:flex-col gap-6 relative z-10 mt-8">
 			<img

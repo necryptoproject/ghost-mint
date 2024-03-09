@@ -8,7 +8,7 @@
 	import { modal, chains, selectedNetwork, isWalletConnected } from '$lib/web3options';
 	import Dropdown from './Dropdown.svelte';
 
-	let expanded = false;
+	let expanded = true;
 
 	const items = [
 		{ text: 'Airdrop', href: '/airdrop', status: 'hot' },
@@ -17,10 +17,10 @@
 		{ text: 'Bridge', href: '', status: 'soon' }
 	];
 
-	const handleChainSelect = () => {
-		if (!$selectedNetwork || !$selectedNetwork.chainId) return;
-		console.log($selectedNetwork);
-		modal.switchNetwork($selectedNetwork.chainId);
+	const handleChainSelect = (e: CustomEvent<(typeof chains)[number]>) => {
+		if (!e.detail || !e.detail.chainId) return;
+
+		modal.switchNetwork(e.detail.chainId);
 	};
 
 	afterNavigate(() => (expanded = false));
@@ -54,7 +54,12 @@
 	</div>
 	<div class="flex items-center justify-end gap-4">
 		{#if $isWalletConnected}
-			<Dropdown bind:selected={$selectedNetwork} items={chains} on:select={handleChainSelect}>
+			<Dropdown
+				bind:selected={$selectedNetwork}
+				items={chains}
+				on:select={handleChainSelect}
+				class="max-lg:hidden"
+			>
 				<svelte:fragment slot="trigger" let:item>
 					{#if item}
 						<span class="flex items-center justify-start">
@@ -108,7 +113,39 @@
 					>
 				</svelte:element>
 			{/each}
-			<ConnectWallet />
+			<ConnectWallet class="w-full text-center" />
+			{#if $isWalletConnected}
+				<Dropdown
+					bind:selected={$selectedNetwork}
+					items={chains}
+					on:select={handleChainSelect}
+					class="w-full"
+				>
+					<svelte:fragment slot="trigger" let:item>
+						{#if item}
+							<span class="flex items-center justify-start">
+								<img
+									src={item.img}
+									alt={item.shortName || ''}
+									class="w-5 aspect-square object-cover rounded-full"
+								/>
+								<span class="ml-4">{item.name}</span>
+							</span>
+						{:else}
+							<span>Select network</span>
+						{/if}
+						<span class="ml-4">▼</span>
+					</svelte:fragment>
+					<svelte:fragment let:item>
+						<img
+							src={item.img}
+							alt={item.shortName || ''}
+							class="w-8 aspect-square object-cover rounded-full"
+						/>
+						<p>{item.name}</p>
+					</svelte:fragment>
+				</Dropdown>
+			{/if}
 		</div>
 	</div>
 </div>

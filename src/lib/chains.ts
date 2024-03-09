@@ -12,7 +12,7 @@ export default [
 		network: 'scroll',
 		currency: 'ETH',
 		explorerUrl: 'https://scrollscan.com',
-		rpcUrl: 'https://rpc.scroll.io'
+		rpcUrl: 'https://rpc.ankr.com/scroll'
 	},
 	{
 		chainId: 59_144,
@@ -20,7 +20,7 @@ export default [
 		network: 'linea-mainnet',
 		currency: 'ETH',
 		explorerUrl: 'https://lineascan.build',
-		rpcUrl: 'https://rpc.linea.build'
+		rpcUrl: 'https://linea.decubate.com'
 	},
 	{
 		chainId: 8453,
@@ -28,7 +28,7 @@ export default [
 		network: 'base',
 		currency: 'ETH',
 		explorerUrl: 'https://basescan.org',
-		rpcUrl: 'https://mainnet.base.org'
+		rpcUrl: 'https://base-rpc.publicnode.com'
 	},
 	{
 		chainId: 5000,
@@ -36,7 +36,7 @@ export default [
 		network: 'mantle',
 		currency: 'MNT',
 		explorerUrl: 'https://explorer.mantle.xyz',
-		rpcUrl: 'https://rpc.mantle.xyz'
+		rpcUrl: 'https://mantle-mainnet.public.blastapi.io'
 	},
 	{
 		chainId: 7_777_777,
@@ -52,7 +52,7 @@ export default [
 		network: 'bsc',
 		currency: 'BNB',
 		explorerUrl: 'https://bscscan.com',
-		rpcUrl: 'https://rpc.ankr.com/bsc'
+		rpcUrl: 'https://bsc-mainnet.public.blastapi.io'
 	},
 	{
 		chainId: 137,
@@ -60,7 +60,7 @@ export default [
 		network: 'matic',
 		currency: 'MATIC',
 		explorerUrl: 'https://polygonscan.com',
-		rpcUrl: 'https://polygon-rpc.com'
+		rpcUrl: 'https://polygon-pokt.nodies.app'
 	},
 	{
 		chainId: 42161,
@@ -68,6 +68,6 @@ export default [
 		network: 'arbitrum',
 		currency: 'ETH',
 		explorerUrl: 'https://arbiscan.io',
-		rpcUrl: 'https://arb1.arbitrum.io/rpc'
+		rpcUrl: 'https://rpc.tornadoeth.cash/arbitrum'
 	}
 ];

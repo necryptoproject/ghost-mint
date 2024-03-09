@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'node-snackbar/dist/snackbar.min.css';
 	import '$lib/css/fonts.css';
 	import '$lib/css/app.css';
 

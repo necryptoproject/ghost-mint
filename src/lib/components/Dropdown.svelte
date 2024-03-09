@@ -14,15 +14,18 @@
 	$: isSelected = (item: I) => JSON.stringify(item) === JSON.stringify(selected);
 
 	const select = async (item: I) => {
-		selected = item;
-		await tick();
+		// selected = item;
+		// await tick();
 		emit('select', item);
 	};
 </script>
 
-<div class="relative flex-none" use:clickOutside={() => (expanded = false)}>
+<div
+	class="relative flex-none {$$restProps.class || ''}"
+	use:clickOutside={() => (expanded = false)}
+>
 	<label
-		class="uppercase flex items-center justify-start border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark w-50 transition-all ease-linear duration-300 cursor-pointer"
+		class="uppercase flex items-center justify-center border-2 border-yellow text-yellow py-3 px-6 text-sm font-bold rounded-lg bg-dark w-50 transition-all ease-linear duration-300 cursor-pointer"
 		aria-expanded={expanded}
 		aria-haspopup="true"
 	>
@@ -30,7 +33,19 @@
 		<slot name="trigger" item={selected} />
 	</label>
 	<div
-		class="absolute left-0 z-10 my-2 rounded-md bg-blue-dark py-2 shadow-lg focus:outline-none transition-all origin-top-right max-h-[198px] overflow-y-auto {position}"
+		class="lg:hidden fixed top-0 left-0 z-10 bg-black/60 w-screen h-screen"
+		class:ease-out={expanded}
+		class:duration-100={expanded}
+		class:ease-in={!expanded}
+		class:duration-75={!expanded}
+		class:opacity-0={!expanded}
+		class:scale-95={!expanded}
+		class:pointer-events-none={!expanded}
+	>
+		<button on:click={() => (expanded = false)} type="button" class="absolute inset-0"></button>
+	</div>
+	<div
+		class="lg:absolute lg:left-0 z-10 my-2 rounded-md bg-blue-dark py-2 shadow-lg focus:outline-none transition-all lg:origin-top-right fixed max-lg:top-1/2 left-1/2 max-lg:-translate-x-1/2 max-lg:-translate-y-1/2 lg:max-h-[198px] max-lg:w-[calc(100dvw-3rem)] max-h-[calc(100dvh-4rem)] overflow-y-auto body {position}"
 		class:ease-out={expanded}
 		class:duration-100={expanded}
 		class:ease-in={!expanded}
@@ -61,3 +76,26 @@
 		{/each}
 	</div>
 </div>
+
+<style lang="postcss">
+	.body {
+		scrollbar-color: theme('colors.yellow.DEFAULT') theme('colors.blue.dark');
+		scrollbar-width: thin;
+	}
+
+	.body::-webkit-scrollbar {
+		width: theme('width.1');
+	}
+
+	.scrollbar-small::-webkit-scrollbar {
+		width: theme('width.1');
+	}
+
+	.body::-webkit-scrollbar-track {
+		background-color: theme('colors.blue.dark');
+	}
+
+	.body::-webkit-scrollbar-thumb {
+		background-color: theme('colors.yellow.DEFAULT');
+	}
+</style>

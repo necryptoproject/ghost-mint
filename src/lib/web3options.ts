@@ -40,7 +40,17 @@ async function handleChange({ isConnected }: EthersStoreUtilState) {
 	}
 }
 
-export const USDTAddress = '0xc0F14A9a8d3Bc913E660c473c1932FFBDda71b45';
+export const contractAddresses = {
+	42161: '0x03f18BfE1413b2bcF94b7C4D41DDFE3e5e49822d',
+	137: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
+	56: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
+	7777777: '0x03e9044D7E8da61815EbeD0a5B265Fbc9CBDfA4f',
+	5000: '0x03e9044D7E8da61815EbeD0a5B265Fbc9CBDfA4f',
+	8453: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
+	59144: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
+	81457: '0xc0F14A9a8d3Bc913E660c473c1932FFBDda71b45',
+	534352: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f'
+};
 export const USDTAbi = [
 	{
 		inputs: [],
