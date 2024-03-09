@@ -1,3 +1,5 @@
+import { browser } from '$app/environment';
+
 /**
  * Handle click outside specific element
  * @param node
@@ -5,6 +7,8 @@
  * @returns
  */
 export const clickOutside = (node: Node, handler: Function) => {
+	if (!browser) return;
+
 	var onClick = function (event: any) {
 		return node && !node.contains(event.target) && !event.defaultPrevented && handler(event);
 	};

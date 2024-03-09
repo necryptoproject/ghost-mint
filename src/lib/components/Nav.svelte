@@ -1,8 +1,12 @@
 <script lang="ts">
-	import { afterNavigate } from '$app/navigation';
-	import Burger from '$lib/assets/svg/burger.svg?component';
-	import { clickOutside } from '$lib/clickOutside';
 	import ConnectWallet from './ConnectWallet.svelte';
+
+	import Burger from '$lib/assets/svg/burger.svg?component';
+
+	import { afterNavigate } from '$app/navigation';
+	import { clickOutside } from '$lib/clickOutside';
+	import { modal, chains, selectedNetwork, isWalletConnected } from '$lib/web3options';
+	import Dropdown from './Dropdown.svelte';
 
 	let expanded = false;
 
@@ -12,6 +16,12 @@
 		{ text: 'Refuel', href: '', status: 'soon' },
 		{ text: 'Bridge', href: '', status: 'soon' }
 	];
+
+	const handleChainSelect = () => {
+		if (!$selectedNetwork || !$selectedNetwork.chainId) return;
+		console.log($selectedNetwork);
+		modal.switchNetwork($selectedNetwork.chainId);
+	};
 
 	afterNavigate(() => (expanded = false));
 </script>
@@ -42,7 +52,36 @@
 			</svelte:element>
 		{/each}
 	</div>
-	<ConnectWallet class="max-lg:hidden" />
+	<div class="flex items-center justify-end gap-4">
+		{#if $isWalletConnected}
+			<Dropdown bind:selected={$selectedNetwork} items={chains} on:select={handleChainSelect}>
+				<svelte:fragment slot="trigger" let:item>
+					{#if item}
+						<span class="flex items-center justify-start">
+							<img
+								src={item.img}
+								alt={item.shortName || ''}
+								class="w-5 aspect-square object-cover rounded-full"
+							/>
+							<span class="ml-4">{item.name}</span>
+						</span>
+					{:else}
+						<span>Select network</span>
+					{/if}
+					<span class="ml-4">▼</span>
+				</svelte:fragment>
+				<svelte:fragment let:item>
+					<img
+						src={item.img}
+						alt={item.shortName || ''}
+						class="w-8 aspect-square object-cover rounded-full"
+					/>
+					<p>{item.name}</p>
+				</svelte:fragment>
+			</Dropdown>
+		{/if}
+		<ConnectWallet class="max-lg:hidden" />
+	</div>
 	<button on:click={() => (expanded = !expanded)} class="lg:hidden relative z-10">
 		<Burger class="w-8 aspect-square text-white" />
 	</button>

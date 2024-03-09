@@ -1,15 +1,15 @@
-<script>
-	import { createWeb3Modal, defaultConfig } from '@web3modal/ethers';
-	// import { setContext, getContext } from '$lib/svelte';
+<script lang="ts">
+	import type { EthersStoreUtilState } from '@web3modal/scaffold-utils/ethers';
 
-	import { modal } from '../web3options';
+	import { modal } from '$lib/web3options';
+
 	let walletConnected = false;
 	let walletAddress = '';
 
-	function handleChange({ provider, providerType, address, error, chainId, isConnected }) {
+	function handleChange({ isConnected }: EthersStoreUtilState) {
 		if (isConnected) {
 			walletConnected = true;
-			walletAddress = modal.getAddress();
+			walletAddress = modal.getAddress() || '';
 		}
 	}
 
