@@ -45,7 +45,7 @@
 		<button on:click={() => (expanded = false)} type="button" class="absolute inset-0"></button>
 	</div>
 	<div
-		class="lg:absolute lg:left-0 z-10 my-2 rounded-md bg-blue-dark py-2 shadow-lg focus:outline-none transition-all lg:origin-top-right fixed max-lg:top-1/2 left-1/2 max-lg:-translate-x-1/2 max-lg:-translate-y-1/2 lg:max-h-[198px] max-lg:w-[calc(100dvw-3rem)] max-h-[calc(100dvh-4rem)] overflow-y-auto body {position}"
+		class="lg:absolute lg:left-0 z-10 my-2 rounded-md bg-blue-dark py-2 shadow-lg focus:outline-none transition-all lg:origin-top-right fixed max-lg:top-1/2 left-1/2 max-lg:-translate-x-1/2 max-lg:-translate-y-1/2 lg:max-h-[198px] max-lg:w-[calc(100dvw-3rem)] w-[calc(100%+3rem)] max-h-[calc(100dvh-4rem)] overflow-y-auto body {position}"
 		class:ease-out={expanded}
 		class:duration-100={expanded}
 		class:ease-in={!expanded}
