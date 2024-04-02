@@ -49,7 +49,10 @@ export const contractAddresses = {
 	8453: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
 	59144: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
 	81457: '0xc0F14A9a8d3Bc913E660c473c1932FFBDda71b45',
-	534352: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f'
+	534352: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
+	42170: '0x03e9044d7e8da61815ebed0a5b265fbc9cbdfa4f',
+	34443: '0x03e9044D7E8da61815EbeD0a5B265Fbc9CBDfA4f',
+	10: '0xDAb290F956DA2486F188f6F98a34c8bB319bff0C'
 };
 export const USDTAbi = [
 	{
@@ -99,7 +102,26 @@ export const USDTAbi = [
 		type: 'function'
 	}
 ];
+
 export const chains = [
+	{
+		name: 'Arbitrum Nova',
+		chainId: 42170,
+		shortName: 'arbitrumNova',
+		img: 'https://nova.arbiscan.io/images/svg/brands/arbitrum.svg?v=1.5'
+	},
+	{
+		name: 'Mode',
+		chainId: 34443,
+		shortName: 'mode',
+		img: 'https://assets-global.website-files.com/64c906a6ed3c4d809558853b/64d0b11158be9cdd5c89a2fe_webc.png'
+	},
+	{
+		name: 'OP Mainnet',
+		chainId: 10,
+		shortName: 'optimism',
+		img: 'https://cryptologos.cc/logos/optimism-ethereum-op-logo.png?v=029'
+	},
 	{
 		name: 'Blast',
 		chainId: 81457,
