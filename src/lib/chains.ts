@@ -1,5 +1,26 @@
 export default [
 	{
+		name: 'Arbitrum Nova',
+		chainId: 42170,
+		currency: 'ETH',
+		explorerUrl: 'https://nova.arbiscan.io/',
+		rpcUrl: 'https://nova.arbitrum.io/rpc'
+	},
+	{
+		name: 'Mode',
+		chainId: 34443,
+		currency: 'ETH',
+		explorerUrl: 'https://modescan.io/',
+		rpcUrl: 'https://1rpc.io/mode'
+	},
+	{
+		name: 'OP Mainnet',
+		chainId: 10,
+		currency: 'ETH',
+		explorerUrl: 'https://optimistic.etherscan.io/',
+		rpcUrl: 'https://optimism.drpc.org'
+	},
+	{
 		chainId: 81457,
 		name: 'Blast Sepolia',
 		currency: 'ETH',
